@@ -1,0 +1,185 @@
+PROJECT CONTEXT PACKET
+
+1) BUSINESS BACKGROUND
+- Client: Clara Schoonover.
+- Current business brand: Time 4U Therapy Massage.
+- New brand direction: Time 4U Therapy Massage Clinic and School.
+- Market challenge: Small-town audience often prefers boutique spa presentation, while client wants to be seen as licensed, credentialed, professional therapeutic care.
+- Primary objective: Redesign site with premium modern look that builds trust and clearly showcases all services.
+
+2) CURRENT WEBSITE + REFERENCES
+- Current site/content source: http://www.time4u.massagetherapy.com/
+- Current platform style: Older ABMP-hosted template feel.
+- Visual style reference client likes: https://renewdayspa.onbuildhealth.com/
+- Existing site has usable source content (services, contact, practitioner info, policy notes), but IA and design are dated.
+
+3) TARGET OUTCOMES
+- New modern site with stronger brand presence.
+- New domain and hosting in client ownership.
+- Mobile-first UX and local trust signals.
+- Google Business Profile setup and optimization.
+- Newsletter signup in footer (explicit client request).
+- Better conversion flow to calls/texts/appointments.
+
+4) NON-NEGOTIABLE CONSTRAINTS
+- Do not include project pricing in client-facing docs unless explicitly requested.
+- Domain, hosting, and Google Business account must be owned by client.
+- Any credentials previously shared in chat should be rotated; do not reuse exposed passwords.
+- Keep claims accurate and professional; avoid exaggerated medical claims.
+- Tone must be approachable, warm, and credibility-first.
+
+5) RECOMMENDED TECH + HOSTING
+- Frontend: Next.js + TypeScript + Tailwind CSS.
+- Hosting: Vercel (primary recommendation for Next.js).
+- Domain registrar: Cloudflare Registrar or Namecheap.
+- Optional analytics: Vercel Analytics or GA4.
+- Newsletter options:
+  - ConvertKit embed
+  - Mailchimp embed
+  - External signup button as MVP fallback
+
+6) CORE PAGE ARCHITECTURE
+- Home
+- About
+- Services
+- Pricing
+- Credentials
+- FAQ
+- Contact / Book
+- Optional: School/Training
+- Optional: Testimonials
+- Optional: Gift Certificates
+
+7) CONTENT STRATEGY
+- Reuse and rewrite legacy content for clarity and conversion.
+- Emphasize trust and professionalism:
+  - Licensed/credentialed therapist
+  - Therapeutic outcomes
+  - Safety and professional care process
+- Keep warm spa-like presentation while preserving clinical credibility.
+- Keep CTAs simple: Call, Text, Book/Contact.
+- Include local relevance for Chickasha, OK.
+
+8) CONVERSION + TRUST REQUIREMENTS
+- Above-the-fold CTA on homepage.
+- Visible phone/booking method on key pages.
+- Credentials and certifications prominently displayed.
+- Prefer real photography once available.
+- Consistent NAP (name/address/phone) across site and GBP.
+- Newsletter signup in global footer.
+
+9) GOOGLE BUSINESS PROFILE REQUIREMENTS
+- Exact business name.
+- Address.
+- Phone.
+- Hours.
+- Services list.
+- Owner Google account email.
+- Photos (exterior/interior/treatment room/logo/headshot).
+- Verification completion.
+- Website URL update after launch.
+- Initial optimization:
+  - Category selection
+  - Service descriptions
+  - Business description
+  - Posting/review cadence
+
+10) KNOWN DATA (REQUIRES CLIENT CONFIRMATION)
+- Existing phone on legacy site: (405) 933-0962
+- Existing address on legacy site: 626 West Kansas Avenue, Suite C, Chickasha, OK 73018
+- Existing services listed: Massage Therapy, Waxing Services, Ear Candling
+- Existing scheduling notes: By appointment only, self-pay language
+- Final name/hours/services/pricing need explicit final confirmation
+
+11) RISKS + MITIGATIONS
+- Scope creep from piecemeal feedback
+  - Mitigation: Require consolidated review rounds
+- Unclear final branding details
+  - Mitigation: Freeze naming before final homepage pass
+- Weak visual assets
+  - Mitigation: Launch with temporary assets, schedule media refresh
+- Ownership confusion
+  - Mitigation: Client-owned accounts from day one
+- Password/security exposure
+  - Mitigation: Rotate all credentials shared in chat
+
+IMPLEMENTATION PLAN (EXECUTION ORDER)
+
+PHASE 1: FOUNDATION
+1. Initialize repository and baseline app scaffold.
+2. Define sitemap and content model.
+3. Finalize business essentials:
+   - Final business name
+   - Hours
+   - Services
+   - Pricing
+   - Credentials
+   - Contact details
+
+PHASE 2: DESIGN DIRECTION
+1. Establish visual system (color, typography, spacing, components).
+2. Create homepage-first design draft.
+3. Get one consolidated approval before building inner pages.
+
+PHASE 3: BUILD
+1. Implement reusable layout and sections.
+2. Build pages in priority order:
+   - Home
+   - Services
+   - About
+   - Contact
+   - Pricing
+   - Credentials
+   - FAQ
+3. Add global footer newsletter signup.
+4. Add metadata and local business schema basics.
+
+PHASE 4: CONTENT + QA
+1. Final copy pass for consistency.
+2. Mobile QA across breakpoints.
+3. Accessibility pass (contrast, headings, forms, links).
+4. Performance pass (images/fonts/LCP basics).
+5. Stakeholder review + revisions.
+
+PHASE 5: LAUNCH
+1. Configure domain + DNS.
+2. Connect hosting + SSL.
+3. Publish production build.
+4. Verify forms, links, click-to-call, and maps.
+5. Connect Search Console and analytics.
+
+PHASE 6: GBP + POST-LAUNCH
+1. Complete GBP setup and verification.
+2. Ensure NAP/services consistency with website.
+3. Upload initial photos and optimize profile text.
+4. Start basic review request workflow.
+
+DEFINITION OF DONE
+- Site is responsive and deployed to client-owned domain.
+- Core pages are complete with approved copy.
+- Newsletter signup is present in global footer.
+- Contact flow works (call/text/form).
+- NAP is consistent everywhere.
+- Local SEO basics are configured.
+- GBP is created/claimed and fully populated (or pending verification with all fields ready).
+- Client handoff completed with ownership confirmed.
+
+AGENT TASK BRIEFS (COPY/PASTE)
+
+A) PRODUCT STRATEGIST AGENT
+"Create final sitemap, page goals, CTA hierarchy, and content priorities for a local therapeutic massage business rebrand. Output page-by-page objective, key sections, and trust elements."
+
+B) COPYWRITER AGENT
+"Rewrite legacy site content into concise trust-building copy for Home, About, Services, Pricing, Credentials, FAQ, and Contact. Tone: professional, warm, local, credibility-first."
+
+C) UI/UX DESIGN AGENT
+"Design a modern wellness/spa-inspired visual system balancing boutique warmth with professional credibility. Provide desktop and mobile section specs and reusable components."
+
+D) FRONTEND BUILD AGENT
+"Implement Next.js + TypeScript + Tailwind website from approved sitemap/design. Include reusable sections, metadata scaffolding, and global footer newsletter signup."
+
+E) QA/LAUNCH AGENT
+"Run prelaunch checks for responsiveness, accessibility basics, performance sanity, link integrity, and contact flow. Provide go/no-go report with remediation list."
+
+F) LOCAL SEO / GBP AGENT
+"Execute GBP setup checklist with finalized business data. Ensure NAP consistency with website and provide a 30-day optimization action list."
