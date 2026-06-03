@@ -18,8 +18,21 @@ Initial repository scaffold for Time 4U Therapy Massage Clinic and School websit
 - Folder: `/docs`
 - Planning page: `docs/index.html`
 
+## Local Website App
+- Stack: Next.js + TypeScript + Tailwind CSS
+- Location: `site/`
+
+### Run Locally
+1. Load Node (nvm): `export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use 22`
+2. Install deps: `cd site && npm install`
+3. Start dev server: `npm run dev`
+4. Open: `http://localhost:3000`
+
+### Build Check
+- `cd site && npm run build`
+
 ## Next Steps
-1. Enable GitHub Pages for this repository using `/docs` on `main`.
-2. Share planning page URL with Clara for approval review.
-3. Capture a single consolidated revision round.
-4. After approval, begin mockup and then Next.js implementation.
+1. Finalize homepage POC content and visual direction with Clara.
+2. Build branded components in `site/src`.
+3. Move approved copy into core pages (Home, Services, About, Contact, Pricing, Credentials, FAQ).
+4. Connect production deployment (Vercel) after approval.
