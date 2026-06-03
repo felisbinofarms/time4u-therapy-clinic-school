@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time 4U Homepage Concept</title>
+    <title>Time 4U Therapy Massage - Home Page POC</title>
     <meta
       name="description"
-      content="Custom homepage concept for Time 4U Therapy Massage Clinic and School with local trust and conversion-focused layout."
+      content="POC homepage for Time 4U Therapy Massage Clinic and School, designed for local trust and easy booking in Chickasha."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,57 +16,75 @@
     />
     <style>
       :root {
-        --bg: #f5f7fb;
-        --surface: #ffffff;
-        --surface-soft: #eef3fb;
-        --ink: #1d2738;
-        --muted: #455066;
-        --accent: #133c6a;
-        --accent-2: #2570b1;
+        --navy: #133c6a;
+        --blue: #2570b1;
+        --mist: #dee3ee;
         --sand: #c9ab85;
         --gold: #ddb673;
-        --line: #d7deea;
-        --shadow: 0 16px 42px rgba(19, 60, 106, 0.12);
-        --radius-lg: 22px;
+        --ink: #1f2940;
+        --muted: #4f5c75;
+        --bg: #f3f6fc;
+        --surface: #ffffff;
+        --line: #d6dfec;
+        --radius-lg: 24px;
         --radius-md: 14px;
+        --shadow: 0 16px 40px rgba(19, 60, 106, 0.12);
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html,
       body {
         margin: 0;
+        padding: 0;
+      }
+
+      body {
         font-family: "Manrope", "Segoe UI", sans-serif;
         color: var(--ink);
         background:
-          radial-gradient(circle at 4% 8%, #edf4ff 0%, transparent 28%),
-          radial-gradient(circle at 90% 10%, #f4ebdd 0%, transparent 34%),
-          linear-gradient(180deg, #f9fbff 0%, #f2f6fc 36%, #eef3fa 100%),
-          var(--bg);
+          radial-gradient(circle at 0% 6%, rgba(37, 112, 177, 0.1), transparent 28%),
+          radial-gradient(circle at 100% 0%, rgba(221, 182, 115, 0.22), transparent 25%),
+          linear-gradient(180deg, #f8faff 0%, var(--bg) 100%);
         line-height: 1.6;
       }
 
       .wrap {
-        width: min(1080px, 92vw);
+        width: min(1120px, 92vw);
         margin: 0 auto;
       }
 
-      .top-nav {
-        padding: 0.9rem 0;
+      .topbar {
+        background: var(--navy);
+        color: #f2f7ff;
+        font-size: 0.86rem;
+      }
+
+      .topbar .wrap {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.48rem 0;
+      }
+
+      .site-header {
         position: sticky;
         top: 0;
         z-index: 20;
         backdrop-filter: blur(8px);
-        background: rgba(245, 247, 251, 0.82);
-        border-bottom: 1px solid rgba(215, 222, 234, 0.8);
+        background: rgba(243, 246, 252, 0.9);
+        border-bottom: 1px solid var(--line);
       }
 
-      .top-nav .wrap {
-        display: flex;
+      .site-header .wrap {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
-        justify-content: space-between;
         gap: 1rem;
+        padding: 0.82rem 0;
       }
 
       .brand {
@@ -75,603 +93,483 @@
         gap: 0.72rem;
       }
 
-      .logo-mark {
-        width: 58px;
-        height: 58px;
+      .logo {
+        width: 64px;
+        height: 64px;
         flex: 0 0 auto;
       }
 
-      .brand-text {
-        line-height: 1.02;
+      .brand-lines {
+        line-height: 1.05;
       }
 
-      .brand-line-1 {
+      .brand-main {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 1.05rem;
         font-weight: 700;
+        font-size: 1.05rem;
         letter-spacing: 0.03em;
       }
 
-      .brand-line-2 {
-        font-size: 0.72rem;
-        color: var(--muted);
-        letter-spacing: 0.03em;
+      .brand-sub {
+        font-size: 0.7rem;
         text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
       }
 
-      .nav-links {
+      .main-nav {
         display: none;
-        align-items: center;
+        justify-content: center;
         gap: 1rem;
-        font-size: 0.9rem;
       }
 
-      .nav-links a {
+      .main-nav a {
+        text-decoration: none;
         color: var(--ink);
-        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.92rem;
       }
 
-      .nav-links a:hover {
-        color: var(--accent-2);
+      .main-nav a:hover {
+        color: var(--blue);
       }
 
-      .header-cta {
-        display: none;
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        color: var(--accent);
-        border-radius: 999px;
-        padding: 0.46rem 0.82rem;
-        font-size: 0.84rem;
-        font-weight: 700;
-      }
-
-      .nav-chip {
-        display: inline-block;
-        padding: 0.3rem 0.72rem;
-        border-radius: 99px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.85);
-        color: var(--muted);
-        font-size: 0.8rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .hero {
-        padding: 2rem 0 1.5rem;
-      }
-
-      .hero-shell {
-        display: grid;
-        gap: 1.2rem;
-        background: linear-gradient(145deg, #ffffff 0%, #eef4fb 100%);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow);
-        padding: 1.5rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-shell::before,
-      .hero-shell::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      .hero-shell::before {
-        width: 280px;
-        height: 280px;
-        right: -120px;
-        top: -120px;
-        background: radial-gradient(circle, rgba(37, 112, 177, 0.16) 0%, rgba(37, 112, 177, 0) 70%);
-      }
-
-      .hero-shell::after {
-        width: 260px;
-        height: 260px;
-        left: -110px;
-        bottom: -150px;
-        background: radial-gradient(circle, rgba(221, 182, 115, 0.22) 0%, rgba(221, 182, 115, 0) 70%);
-      }
-
-      h1 {
-        margin: 0;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: clamp(2.2rem, 5vw, 4rem);
-        line-height: 1.02;
-        max-width: 16ch;
-      }
-
-      .lead {
-        margin: 0;
-        max-width: 54ch;
-        color: var(--muted);
-        font-size: 1.05rem;
-      }
-
-      .hero-row {
+      .header-actions {
         display: flex;
         align-items: center;
-        gap: 0.7rem;
-        flex-wrap: wrap;
+        gap: 0.5rem;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
+        padding: 0.58rem 0.92rem;
         border-radius: 999px;
-        padding: 0.7rem 1rem;
-        font-size: 0.95rem;
-        font-weight: 700;
+        text-decoration: none;
         border: 1px solid transparent;
-        transition: transform 220ms ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
+        font-weight: 700;
+        font-size: 0.86rem;
       }
 
       .btn-primary {
-        background: var(--accent);
-        color: #f7fbff;
+        background: var(--navy);
+        color: #f5f9ff;
       }
 
-      .btn-secondary {
-        background: transparent;
-        border-color: var(--accent-2);
-        color: var(--accent-2);
+      .btn-outline {
+        color: var(--blue);
+        border-color: var(--blue);
       }
 
-      .hero-note {
-        font-size: 0.9rem;
-        color: var(--muted);
+      .hero {
+        padding: 1.4rem 0 1rem;
       }
 
-      .sample-card {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        padding: 0.9rem;
-      }
-
-      .sample-card h2 {
-        margin: 0 0 0.3rem;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 1.4rem;
-      }
-
-      .sample-card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .section {
-        padding: 1.2rem 0;
-      }
-
-      .section-title {
-        margin: 0 0 0.6rem;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
-      }
-
-      .section-copy {
-        margin: 0;
-        color: var(--muted);
-        max-width: 64ch;
-      }
-
-      .grid {
+      .hero-shell {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
+        background: linear-gradient(150deg, #ffffff, #ecf3ff 58%, #f7efe2 120%);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-copy {
+        padding: 1.3rem;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+        background: #eaf2ff;
+        border: 1px solid #c9d8ef;
+        border-radius: 999px;
+        padding: 0.24rem 0.62rem;
+      }
+
+      h1 {
+        margin: 0.7rem 0 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 5.3vw, 3.6rem);
+        line-height: 1.02;
+      }
+
+      .hero-copy p {
+        margin: 0.7rem 0 0;
+        color: var(--muted);
+        max-width: 52ch;
+      }
+
+      .hero-cta {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .hero-aside {
+        background: linear-gradient(180deg, rgba(19, 60, 106, 0.94), rgba(37, 112, 177, 0.88));
+        color: #f2f7ff;
+        padding: 1.3rem;
+      }
+
+      .hero-aside h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.8rem;
+      }
+
+      .hero-aside p {
+        margin: 0.6rem 0 0;
+        color: #d7e5ff;
+      }
+
+      .hero-aside ul {
+        margin: 0.8rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .hero-aside li {
+        margin: 0.32rem 0;
+      }
+
+      section {
+        padding: 1rem 0;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.6rem, 4vw, 2.45rem);
+      }
+
+      .section-head p {
+        margin: 0.35rem 0 0;
+        color: var(--muted);
+      }
+
+      .cards {
+        margin-top: 0.8rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
       }
 
       .card {
-        grid-column: span 12;
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: var(--radius-md);
         box-shadow: var(--shadow);
-        padding: 1.1rem;
-      }
-
-      .card h2 {
-        margin: 0 0 0.55rem;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 1.55rem;
-      }
-
-      .card p {
-        margin: 0.2rem 0;
-        color: var(--muted);
-      }
-
-      ul {
-        margin: 0.45rem 0 0;
-        padding-left: 1.05rem;
-      }
-
-      li {
-        margin: 0.34rem 0;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 0.8rem;
-      }
-
-      .service {
-        grid-column: span 12;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        background: #fff;
         padding: 1rem;
       }
 
-      .service h3 {
-        margin: 0 0 0.35rem;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 1.35rem;
+      .card h3 {
+        margin: 0;
+        font-size: 1.08rem;
       }
 
-      .service p {
-        margin: 0;
+      .card p {
+        margin: 0.44rem 0 0;
         color: var(--muted);
       }
 
-      .steps {
-        counter-reset: step;
-        list-style: none;
-        padding: 0;
-        margin: 0.4rem 0 0;
-      }
-
-      .steps li {
-        position: relative;
-        margin: 0.55rem 0;
-        padding-left: 2.2rem;
-      }
-
-      .steps li::before {
-        counter-increment: step;
-        content: counter(step);
-        position: absolute;
-        left: 0;
-        top: 0.08rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 50%;
-        background: var(--accent);
-        color: #f7fbff;
-        display: grid;
-        place-items: center;
-        font-size: 0.8rem;
+      .price {
+        margin-top: 0.56rem;
+        font-size: 0.9rem;
+        color: var(--navy);
         font-weight: 700;
       }
 
-      .notice {
-        border-left: 4px solid var(--accent-2);
-        background: #edf4fb;
-      }
-
-      .palette {
+      .grid-2 {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .badge-row {
+        display: flex;
         gap: 0.5rem;
-        margin-top: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 0.7rem;
       }
 
-      .swatch {
-        border: 1px solid var(--line);
+      .badge {
+        border: 1px solid #c5d6ef;
+        background: #edf4ff;
+        color: #244f82;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        padding: 0.22rem 0.58rem;
+      }
+
+      .quote {
+        margin: 0;
+        padding: 0.9rem;
+        border-left: 4px solid var(--sand);
+        background: #fffaf1;
         border-radius: 10px;
-        padding: 0.4rem;
-        text-align: center;
-        background: #fff;
       }
 
-      .swatch-color {
-        height: 42px;
-        border-radius: 7px;
+      .quote strong {
+        display: block;
+        margin-top: 0.45rem;
+        color: #5f4f38;
       }
 
-      .swatch-code {
-        margin-top: 0.34rem;
-        font-size: 0.76rem;
+      .steps {
+        margin: 0.5rem 0 0;
+        padding-left: 1.05rem;
+      }
+
+      .steps li {
+        margin: 0.42rem 0;
+      }
+
+      .site-footer {
+        margin-top: 1rem;
+        padding: 1.2rem 0 2rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .newsletter {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin-top: 0.52rem;
+      }
+
+      .newsletter input {
+        flex: 1 1 220px;
+        padding: 0.6rem 0.7rem;
+        border: 1px solid #bfcde4;
+        border-radius: 9px;
+        font: inherit;
+      }
+
+      .tiny {
+        font-size: 0.8rem;
         color: var(--muted);
       }
 
-      .foot {
-        padding: 2rem 0 3rem;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .fade-up {
-        opacity: 0;
-        transform: translateY(8px);
-        animation: rise 540ms ease forwards;
-      }
-
-      .delay-1 {
-        animation-delay: 90ms;
-      }
-
-      .delay-2 {
-        animation-delay: 180ms;
-      }
-
-      .delay-3 {
-        animation-delay: 270ms;
-      }
-
-      .delay-4 {
-        animation-delay: 360ms;
-      }
-
-      @keyframes rise {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @media (min-width: 760px) {
-        .nav-links {
+      @media (min-width: 780px) {
+        .main-nav {
           display: flex;
         }
 
-        .header-cta {
-          display: inline-flex;
-        }
-
         .hero-shell {
-          grid-template-columns: 1.3fr 0.9fr;
-          align-items: end;
-          padding: 2rem;
+          grid-template-columns: 1.45fr 0.9fr;
         }
 
-        .card-lg {
-          grid-column: span 8;
+        .cards {
+          grid-template-columns: repeat(3, 1fr);
         }
 
-        .card-sm {
-          grid-column: span 4;
+        .grid-2 {
+          grid-template-columns: 1fr 1fr;
         }
 
-        .service {
-          grid-column: span 4;
-        }
-
-        .card-half {
-          grid-column: span 6;
-        }
-      }
-
-      @media (max-width: 759px) {
-        .top-nav .wrap {
-          align-items: center;
-        }
-
-        .hero {
-          padding-top: 1.2rem;
-        }
-
-        .palette {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        .footer-grid {
+          grid-template-columns: 1.2fr 1fr;
         }
       }
     </style>
   </head>
   <body>
-    <nav class="top-nav fade-up">
+    <div class="topbar">
       <div class="wrap">
-        <div class="brand" aria-label="Time 4U logo and business name">
-          <svg class="logo-mark" viewBox="0 0 120 120" role="img" aria-label="Time 4U wave logo mark">
-            <circle cx="60" cy="60" r="47" fill="none" stroke="#133C6A" stroke-width="4" stroke-dasharray="4 8" />
-            <path d="M16 76 C35 78, 44 60, 57 58 C72 56, 73 78, 95 76" fill="none" stroke="#133C6A" stroke-width="5" stroke-linecap="round"/>
-            <path d="M44 82 C56 80, 63 70, 72 66 C82 62, 86 72, 82 79" fill="none" stroke="#2570B1" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-          <div class="brand-text">
-            <div class="brand-line-1">TIME 4 U THERAPY MASSAGE</div>
-            <div class="brand-line-2">Clinic and School of Massage Therapy</div>
-          </div>
-        </div>
-        <div class="nav-links" aria-label="Primary">
-          <a href="#">Services</a>
-          <a href="#">Pricing</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-        <a class="header-cta" href="#">Book Today</a>
-        <span class="nav-chip">Homepage Concept Preview</span>
+        <span>By appointment only | Chickasha, Oklahoma</span>
+        <span>Call or text: (405) 933-0962</span>
       </div>
-    </nav>
+    </div>
 
-    <header class="hero wrap fade-up delay-1">
-      <div class="hero-shell">
-        <div>
-          <h1>Warm first impression. Trusted care. Easy to book.</h1>
-          <p class="lead">
-            Inspired by your preferred style but built as your own unique brand,
-            this concept is made for local clients in Chickasha: clear,
-            trustworthy, and focused on helping people quickly choose and book.
-          </p>
-          <div class="hero-row" style="margin-top: 1rem">
-            <a class="btn btn-primary" href="#">Call to Book</a>
-            <a class="btn btn-secondary" href="#">Text to Book</a>
-            <a class="btn btn-secondary" href="#">Ask a Question</a>
+    <header class="site-header">
+      <div class="wrap">
+        <div class="brand" aria-label="Time 4 U Therapy Massage brand">
+          <svg class="logo" viewBox="0 0 140 140" role="img" aria-label="Time 4U logo wave and clock mark">
+            <path d="M18 95 C43 95, 47 75, 62 70 C79 64, 87 89, 120 89" fill="none" stroke="#133C6A" stroke-width="6" stroke-linecap="round"/>
+            <path d="M44 95 C58 94, 67 84, 75 77 C86 68, 100 71, 98 82" fill="none" stroke="#133C6A" stroke-width="5" stroke-linecap="round"/>
+            <path d="M42 76 A36 36 0 1 1 95 47" fill="none" stroke="#133C6A" stroke-width="4"/>
+            <line x1="50" y1="40" x2="50" y2="33" stroke="#133C6A" stroke-width="2"/>
+            <line x1="63" y1="30" x2="63" y2="23" stroke="#133C6A" stroke-width="2"/>
+            <line x1="78" y1="28" x2="78" y2="21" stroke="#133C6A" stroke-width="2"/>
+            <line x1="92" y1="34" x2="92" y2="27" stroke="#133C6A" stroke-width="2"/>
+          </svg>
+          <div class="brand-lines">
+            <div class="brand-main">TIME 4 U THERAPY MASSAGE</div>
+            <div class="brand-sub">Clinic and School of Massage Therapy</div>
           </div>
-          <p class="hero-note" style="margin-top: 0.8rem">
-            This is a concept page only. After approval, we build the full site.
-          </p>
         </div>
-        <div class="sample-card">
-          <h2>Brand direction from your logo set</h2>
-          <p>
-            We are using your blue-and-sand color palette and professional tone,
-            so the website feels elevated while still welcoming and local.
-          </p>
-          <div class="palette">
-            <div class="swatch">
-              <div class="swatch-color" style="background:#133C6A"></div>
-              <div class="swatch-code">#133C6A</div>
-            </div>
-            <div class="swatch">
-              <div class="swatch-color" style="background:#2570B1"></div>
-              <div class="swatch-code">#2570B1</div>
-            </div>
-            <div class="swatch">
-              <div class="swatch-color" style="background:#DEE3EE"></div>
-              <div class="swatch-code">#DEE3EE</div>
-            </div>
-            <div class="swatch">
-              <div class="swatch-color" style="background:#C9AB85"></div>
-              <div class="swatch-code">#C9AB85</div>
-            </div>
-            <div class="swatch">
-              <div class="swatch-color" style="background:#DDB673"></div>
-              <div class="swatch-code">#DDB673</div>
-            </div>
-          </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#why">Why Choose Us</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-outline" href="tel:4059330962">Call</a>
+          <a class="btn btn-primary" href="#contact">Book Now</a>
         </div>
       </div>
     </header>
 
-    <main class="wrap">
-      <section class="section fade-up delay-2">
-        <h2 class="section-title">Sample Service Section</h2>
-        <p class="section-copy">
-          Services are shown in a simple layout with value-focused language.
-          This helps price-conscious clients understand what they get, not just
-          what they pay.
-        </p>
-        <div class="services-grid" style="margin-top: 0.9rem">
-          <article class="service">
-            <h3>Therapeutic Massage</h3>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-shell">
+          <div class="hero-copy">
+            <span class="eyebrow">Home Page POC</span>
+            <h1>Therapeutic care that feels personal and professional.</h1>
             <p>
-              Targeted relief for tension, stress, and recovery goals with a
-              clear explanation of session options.
+              Welcome to Time 4U Therapy Massage Clinic and School. This sample
+              homepage shows the real look and feel we can launch: easy to use,
+              clear on services and prices, and built to help more local clients
+              confidently book with you.
             </p>
-          </article>
-          <article class="service">
-            <h3>Waxing Services</h3>
-            <p>
-              Professional, private care with simple prep guidance and expected
-              results.
-            </p>
-          </article>
-          <article class="service">
-            <h3>Specialty Wellness Options</h3>
-            <p>
-              Optional services presented with clear expectations and safety-
-              first wording.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="grid section fade-up delay-3">
-        <article class="card card-lg">
-          <h2>Pages We Will Build</h2>
-          <ul>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Services</li>
-            <li>Pricing</li>
-            <li>Credentials</li>
-            <li>Common Questions</li>
-            <li>Contact and Booking</li>
-          </ul>
-        </article>
-
-        <article class="card card-sm">
-          <h2>Why This Layout Works for Your Market</h2>
-          <ul>
-            <li>Clear pricing page to reduce uncertainty</li>
-            <li>Stronger trust cues for new clients</li>
-            <li>Fast call/text actions for mobile users</li>
-            <li>Simple messaging that supports referrals</li>
-            <li>Professional look that supports growth</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="grid section fade-up delay-3">
-        <article class="card card-half">
-          <h2>Trust Signals Above Price Pressure</h2>
-          <p>
-            In a small-town market, people often compare price first. This
-            design answers that by also highlighting credibility: credentials,
-            care approach, testimonials, and what clients can expect.
-          </p>
-        </article>
-        <article class="card card-half">
-          <h2>Referral-Friendly Messaging</h2>
-          <p>
-            Since many current clients come by word of mouth, the site language
-            is built to be easy to share: clear service names, clear benefits,
-            and clear contact actions for friends and family referrals.
-          </p>
-        </article>
-      </section>
-
-      <section class="grid section fade-up delay-4">
-        <article class="card card-sm">
-          <h2>Simple Timeline</h2>
-          <ol class="steps">
-            <li>Approve this homepage direction</li>
-            <li>Finalize business details and pricing</li>
-            <li>Build and review full website pages</li>
-            <li>Launch and update Google listing</li>
-          </ol>
-        </article>
-
-        <article class="card card-lg notice">
-          <h2>Approval Checklist</h2>
-          <p>Please confirm these items so we can begin full production:</p>
-          <ul>
-            <li>Final business name</li>
-            <li>Final hours, services, and pricing</li>
-            <li>Final credentials to display</li>
-            <li>Final phone, address, and booking preference</li>
-            <li>Newsletter choice (or add after launch)</li>
-          </ul>
-          <div class="hero-row" style="margin-top: 0.9rem">
-            <a class="btn btn-primary" href="#">Looks Good - Start Build</a>
-            <a class="btn btn-secondary" href="#">Needs Edits First</a>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="tel:4059330962">Call to Book</a>
+              <a class="btn btn-outline" href="#contact">Text to Book</a>
+              <a class="btn btn-outline" href="#services">View Services</a>
+            </div>
           </div>
-        </article>
-      </section>
-
-      <section class="section fade-up delay-4">
-        <h2 class="section-title">Sample Footer Area</h2>
-        <p class="section-copy">
-          The live website footer will include your contact information, quick
-          links, and a newsletter signup section.
-        </p>
-        <div class="card" style="margin-top: 0.8rem">
-          <p>
-            Time 4U Therapy Massage Clinic and School | Chickasha, OK | Call:
-            (405) 933-0962
-          </p>
-          <p>Newsletter signup section will appear here.</p>
+          <aside class="hero-aside">
+            <h2>At a Glance</h2>
+            <p>Designed for Chickasha clients looking for trusted care.</p>
+            <ul>
+              <li>Simple service choices</li>
+              <li>Clear booking options</li>
+              <li>Visible credentials and trust cues</li>
+              <li>Mobile-first layout for local search traffic</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
+      <section id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Popular Services</h2>
+            <p>
+              Easy to scan, clear to compare, and written so clients understand
+              value and outcomes.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>Therapeutic Massage</h3>
+              <p>
+                Focused sessions for stress relief, muscle tension, and recovery.
+              </p>
+              <div class="price">Example layout: 60 min | Starting at $85</div>
+            </article>
+            <article class="card">
+              <h3>Waxing Services</h3>
+              <p>
+                Professional care with prep and aftercare guidance clients can
+                follow confidently.
+              </p>
+              <div class="price">Example layout: Starting at $20</div>
+            </article>
+            <article class="card">
+              <h3>Specialty Services</h3>
+              <p>
+                Optional wellness services presented with clear expectations and
+                simple language.
+              </p>
+              <div class="price">Example layout: Priced by service</div>
+            </article>
+          </div>
+          <p class="tiny">Pricing shown above is sample content for layout review only.</p>
+        </div>
+      </section>
+
+      <section id="why">
+        <div class="wrap grid-2">
+          <article class="card">
+            <h3>Why clients will choose this site</h3>
+            <p>
+              In your market, many people compare price first. This homepage is
+              designed to show both price clarity and trust so they feel good
+              choosing your business, not just the cheapest option.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Clear Pricing</span>
+              <span class="badge">Easy Booking</span>
+              <span class="badge">Professional Credibility</span>
+              <span class="badge">Referral Friendly</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>What this page will help you do</h3>
+            <ul class="steps">
+              <li>Get more calls and text messages from new clients</li>
+              <li>Make it easy for current clients to refer friends</li>
+              <li>Show quality and professionalism at first glance</li>
+              <li>Build trust before clients even walk in</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="wrap grid-2">
+          <article class="card">
+            <h3>Client feedback style section</h3>
+            <p>
+              This area can feature real client testimonials after approval and
+              review.
+            </p>
+            <blockquote class="quote">
+              I felt listened to, comfortable, and so much better after my
+              session. Booking was easy and the care was excellent.
+              <strong>Sample Review - Local Client</strong>
+            </blockquote>
+          </article>
+          <article class="card" id="contact">
+            <h3>Ready to book?</h3>
+            <p>Call, text, or send a quick message.</p>
+            <ul class="steps">
+              <li>Call: (405) 933-0962</li>
+              <li>Location: Chickasha, OK</li>
+              <li>Hours: By appointment only</li>
+            </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="tel:4059330962">Call Now</a>
+              <a class="btn btn-outline" href="#">Text Now</a>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <footer class="wrap foot">
-      One-page visual sample for approval. Full site design and build begin
-      after approval.
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="card">
+          <h3>Time 4U Therapy Massage Clinic and School</h3>
+          <p>
+            Chickasha, Oklahoma | (405) 933-0962 | By appointment only
+          </p>
+          <p class="tiny">This page is a homepage POC for approval before full build.</p>
+        </div>
+        <div class="card">
+          <h3>Stay in touch</h3>
+          <p>Newsletter signup section (requested feature)</p>
+          <form class="newsletter" action="#" method="post">
+            <input type="email" placeholder="Email address" aria-label="Email address" />
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
