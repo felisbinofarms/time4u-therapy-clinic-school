@@ -5,4 +5,4 @@
 :HL["/time4u-therapy-clinic-school/images/massage-back.jpg","image"]
 :HL["/time4u-therapy-clinic-school/images/spa-calm.jpg","image"]
 :HL["/time4u-therapy-clinic-school/images/oils.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"pMM3b5gRgQM2n17Vb3XIw"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"uvXlLbX9KCIeZl8zvLxAl"}

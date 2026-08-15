@@ -1,35 +1,94 @@
+// Approximation of the Time 4U brand mark (clock face flowing into an ocean wave).
+// Swap for the designer's real vector/PNG when available.
 export default function Logo() {
+  const cx = 74;
+  const cy = 52;
+  const rInner = 33;
+  const rOuter = 41;
+  const tickCount = 16;
+
+  const ticks = Array.from({ length: tickCount }, (_, i) => {
+    const deg = (i * 360) / tickCount;
+    // leave the bottom open where the wave flows out
+    if (deg > 148 && deg < 212) return null;
+    const a = ((deg - 90) * Math.PI) / 180;
+    return (
+      <line
+        key={i}
+        x1={(cx + rInner * Math.cos(a)).toFixed(1)}
+        y1={(cy + rInner * Math.sin(a)).toFixed(1)}
+        x2={(cx + rOuter * Math.cos(a)).toFixed(1)}
+        y2={(cy + rOuter * Math.sin(a)).toFixed(1)}
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    );
+  });
+
   return (
     <svg
       className="logo"
-      viewBox="0 0 140 140"
+      viewBox="0 0 150 138"
       role="img"
-      aria-label="Time 4U logo wave and clock mark"
+      aria-label="Time 4U clock and wave logo"
     >
-      <path
-        d="M18 95 C43 95, 47 75, 62 70 C79 64, 87 89, 120 89"
+      {/* clock face */}
+      <circle
+        cx={cx}
+        cy={cy}
+        r={rInner}
         fill="none"
         stroke="currentColor"
-        strokeWidth="6"
+        strokeWidth="2.4"
+      />
+      {ticks}
+      {/* clock hands */}
+      <line
+        x1={cx}
+        y1={cy}
+        x2={cx - 10}
+        y2={cy - 17}
+        stroke="currentColor"
+        strokeWidth="2.6"
         strokeLinecap="round"
       />
-      <path
-        d="M44 95 C58 94, 67 84, 75 77 C86 68, 100 71, 98 82"
-        fill="none"
+      <line
+        x1={cx}
+        y1={cy}
+        x2={cx + 15}
+        y2={cy - 8}
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="2.6"
         strokeLinecap="round"
       />
+
+      {/* wave crest flowing out of the clock and curling on the left */}
       <path
-        d="M42 76 A36 36 0 1 1 95 47"
+        d="M138 90
+           C 118 84, 100 92, 88 100
+           C 76 108, 62 109, 50 102
+           C 40 96, 27 98, 22 108
+           C 17 118, 25 128, 35 125
+           C 43 122, 44 114, 38 110
+           C 33 107, 27 110, 29 116"
         fill="none"
         stroke="currentColor"
-        strokeWidth="4"
+        strokeWidth="3.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <line x1="50" y1="40" x2="50" y2="33" stroke="currentColor" strokeWidth="2" />
-      <line x1="63" y1="30" x2="63" y2="23" stroke="currentColor" strokeWidth="2" />
-      <line x1="78" y1="28" x2="78" y2="21" stroke="currentColor" strokeWidth="2" />
-      <line x1="92" y1="34" x2="92" y2="27" stroke="currentColor" strokeWidth="2" />
+      {/* second wave line (foam) */}
+      <path
+        d="M126 99
+           C 108 108, 86 111, 70 104
+           C 63 101, 57 99, 51 101"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
