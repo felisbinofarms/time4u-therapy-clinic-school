@@ -580,3 +580,38 @@ h1,
   background: #eef4ff;
   color: var(--blue);
 }
+
+.service-card h3 {
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid var(--mist);
+}
+
+.service-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.service-list li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.4rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.95rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--gold);
+}

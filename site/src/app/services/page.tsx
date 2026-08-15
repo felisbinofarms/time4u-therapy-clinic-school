@@ -66,9 +66,9 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="cards cards-2">
             {serviceGroups.map((group) => (
-              <article className="card" key={group.title}>
+              <article className="card service-card" key={group.title}>
                 <h3>{group.title}</h3>
-                <ul className="steps">
+                <ul className="service-list">
                   {group.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
