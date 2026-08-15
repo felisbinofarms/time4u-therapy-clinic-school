@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -25,50 +26,85 @@ export default function Home() {
                 View Services
               </Link>
             </div>
+              <div className="hero-facts">
+                <span>611 West Chickasha, Suite B</span>
+                <span>(405) 933-0962</span>
+                <span>Mon&ndash;Thu, 9am&ndash;5pm</span>
+              </div>
+            </div>
+            <div className="hero-media">
+              <Image
+                src="/images/hero-massage.jpg"
+                alt="Therapeutic massage session at Time 4U"
+                fill
+                priority
+                sizes="(max-width: 780px) 100vw, 40vw"
+                className="hero-img"
+              />
+            </div>
           </div>
-          <aside className="hero-aside">
-            <h2>Visit Us</h2>
-            <p>By appointment only — call or text to schedule.</p>
-            <ul>
-              <li>611 West Chickasha, Suite B, Chickasha, OK</li>
-              <li>(405) 933-0962</li>
-              <li>Mon&ndash;Thu, 9am&ndash;5pm</li>
-              <li>Self-pay &middot; No insurance</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
+        </section>
 
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="section-head">
-            <h2>Services</h2>
-            <p>
-              Therapeutic and relaxation bodywork, plus waxing and wellness
-              services — each session tailored to you.
-            </p>
-          </div>
-          <div className="cards">
-            <article className="card">
-              <h3>Therapeutic Massage</h3>
+        <section className="section-pad">
+          <div className="wrap">
+            <div className="section-head">
+              <h2>Services</h2>
               <p>
-                Deep tissue, medical, orthopedic, prenatal, lymphatic and more —
-                focused on real relief from pain and tension.
+                Therapeutic and relaxation bodywork, plus waxing and wellness
+                services — each session tailored to you.
               </p>
+            </div>
+            <div className="cards">
+            <article className="card feature-card">
+              <div className="feature-media">
+                <Image
+                  src="/images/massage-back.jpg"
+                  alt="Deep tissue therapeutic massage"
+                  fill
+                  sizes="(max-width: 780px) 100vw, 33vw"
+                />
+              </div>
+              <div className="feature-body">
+                <h3>Therapeutic Massage</h3>
+                <p>
+                  Deep tissue, medical, orthopedic, prenatal, lymphatic and more
+                  — focused on real relief from pain and tension.
+                </p>
+              </div>
             </article>
-            <article className="card">
-              <h3>Reflexology &amp; Bodywork</h3>
-              <p>
-                Foot and hand reflexology, cupping, hot stone and myofascial
-                techniques to help your body reset and recover.
-              </p>
+            <article className="card feature-card">
+              <div className="feature-media">
+                <Image
+                  src="/images/spa-calm.jpg"
+                  alt="Calm spa setting with candles and towels"
+                  fill
+                  sizes="(max-width: 780px) 100vw, 33vw"
+                />
+              </div>
+              <div className="feature-body">
+                <h3>Reflexology &amp; Bodywork</h3>
+                <p>
+                  Foot and hand reflexology, cupping, hot stone and myofascial
+                  techniques to help your body reset and recover.
+                </p>
+              </div>
             </article>
-            <article className="card">
-              <h3>Waxing &amp; Wellness</h3>
-              <p>
-                Professional waxing and sugaring, ear candling, and detox
-                services with clear prep and aftercare guidance.
-              </p>
+            <article className="card feature-card">
+              <div className="feature-media">
+                <Image
+                  src="/images/oils.jpg"
+                  alt="Essential oils used in treatments"
+                  fill
+                  sizes="(max-width: 780px) 100vw, 33vw"
+                />
+              </div>
+              <div className="feature-body">
+                <h3>Waxing &amp; Wellness</h3>
+                <p>
+                  Professional waxing and sugaring, ear candling, and detox
+                  services with clear prep and aftercare guidance.
+                </p>
+              </div>
             </article>
           </div>
           <p className="section-cta">
@@ -102,6 +138,34 @@ export default function Home() {
               <li>Techniques matched to your condition and pain level</li>
               <li>Honest guidance on what will actually help</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="wrap">
+          <article className="image-band">
+            <div className="image-band-media">
+              <Image
+                src="/images/spa-calm.jpg"
+                alt="Relaxing spa atmosphere"
+                fill
+                sizes="(max-width: 780px) 100vw, 45vw"
+              />
+            </div>
+            <div className="image-band-body">
+              <h2>A calm space to truly unwind</h2>
+              <p>
+                From the moment you arrive, everything is set up for your comfort
+                — a warm, quiet room, soothing touches, and care that&apos;s
+                focused entirely on you.
+              </p>
+              <p className="section-cta">
+                <Link className="btn btn-primary" href="/contact">
+                  Book your visit
+                </Link>
+              </p>
+            </div>
           </article>
         </div>
       </section>

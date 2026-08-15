@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -39,6 +40,14 @@ export default function AboutPage() {
       <section className="section-pad">
         <div className="wrap grid-2">
           <div className="prose">
+            <div className="about-media">
+              <Image
+                src="/images/massage-back.jpg"
+                alt="Clara providing a therapeutic massage"
+                fill
+                sizes="(max-width: 780px) 100vw, 45vw"
+              />
+            </div>
             <p>
               Hello! My name is Clara Schoonover. Before I became a massage
               therapist, I earned my license in cosmetology. In 2008, I graduated
