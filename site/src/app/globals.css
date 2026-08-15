@@ -669,6 +669,8 @@ h1,
 .feature-media img,
 .image-band-media img,
 .about-media img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;

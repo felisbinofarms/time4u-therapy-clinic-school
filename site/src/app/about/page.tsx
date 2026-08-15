@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "../lib/basePath";
 
 export const metadata: Metadata = {
   title: "About Clara",
@@ -41,11 +41,9 @@ export default function AboutPage() {
         <div className="wrap grid-2">
           <div className="prose">
             <div className="about-media">
-              <Image
-                src="/images/massage-back.jpg"
+              <img
+                src={`${basePath}/images/massage-back.jpg`}
                 alt="Clara providing a therapeutic massage"
-                fill
-                sizes="(max-width: 780px) 100vw, 45vw"
               />
             </div>
             <p>

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "./lib/basePath";
 
 export default function Home() {
   return (
@@ -33,12 +33,9 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-media">
-              <Image
-                src="/images/hero-massage.jpg"
+              <img
+                src={`${basePath}/images/hero-massage.jpg`}
                 alt="Therapeutic massage session at Time 4U"
-                fill
-                priority
-                sizes="(max-width: 780px) 100vw, 40vw"
                 className="hero-img"
               />
             </div>
@@ -57,11 +54,9 @@ export default function Home() {
             <div className="cards">
             <article className="card feature-card">
               <div className="feature-media">
-                <Image
-                  src="/images/massage-back.jpg"
+                <img
+                  src={`${basePath}/images/massage-back.jpg`}
                   alt="Deep tissue therapeutic massage"
-                  fill
-                  sizes="(max-width: 780px) 100vw, 33vw"
                 />
               </div>
               <div className="feature-body">
@@ -74,11 +69,9 @@ export default function Home() {
             </article>
             <article className="card feature-card">
               <div className="feature-media">
-                <Image
-                  src="/images/spa-calm.jpg"
+                <img
+                  src={`${basePath}/images/spa-calm.jpg`}
                   alt="Calm spa setting with candles and towels"
-                  fill
-                  sizes="(max-width: 780px) 100vw, 33vw"
                 />
               </div>
               <div className="feature-body">
@@ -91,11 +84,9 @@ export default function Home() {
             </article>
             <article className="card feature-card">
               <div className="feature-media">
-                <Image
-                  src="/images/oils.jpg"
+                <img
+                  src={`${basePath}/images/oils.jpg`}
                   alt="Essential oils used in treatments"
-                  fill
-                  sizes="(max-width: 780px) 100vw, 33vw"
                 />
               </div>
               <div className="feature-body">
@@ -146,11 +137,9 @@ export default function Home() {
         <div className="wrap">
           <article className="image-band">
             <div className="image-band-media">
-              <Image
-                src="/images/spa-calm.jpg"
+              <img
+                src={`${basePath}/images/spa-calm.jpg`}
                 alt="Relaxing spa atmosphere"
-                fill
-                sizes="(max-width: 780px) 100vw, 45vw"
               />
             </div>
             <div className="image-band-body">
