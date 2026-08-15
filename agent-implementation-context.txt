@@ -28,15 +28,25 @@ PROJECT CONTEXT PACKET
 - Keep claims accurate and professional; avoid exaggerated medical claims.
 - Tone must be approachable, warm, and credibility-first.
 
-5) RECOMMENDED TECH + HOSTING
-- Frontend: Next.js + TypeScript + Tailwind CSS.
-- Hosting: Vercel (primary recommendation for Next.js).
-- Domain registrar: Cloudflare Registrar or Namecheap.
-- Optional analytics: Vercel Analytics or GA4.
-- Newsletter options:
-  - ConvertKit embed
-  - Mailchimp embed
-  - External signup button as MVP fallback
+5) RECOMMENDED TECH + HOSTING (DECIDED 2026-08-14 — all-Cloudflare)
+- Frontend: Next.js + TypeScript + Tailwind CSS, built as a STATIC EXPORT (output: "export").
+- Domain + DNS: Cloudflare Registrar, in Clara's account (~$11/yr, at-cost).
+- Hosting: Cloudflare Pages (free tier: unlimited bandwidth, 500 builds/mo).
+  - Chosen over Vercel (free tier bans commercial use; Pro $20/mo) and over Netlify
+    (free tier moved to a 300-credit/mo cap; each deploy ~15 credits — a CMS that
+    deploys on every edit can exhaust it).
+- Optional analytics: Cloudflare Web Analytics (free, privacy-friendly) or GA4.
+- Newsletter (external embed either way): Brevo (free 300 emails/day) or Mailchimp.
+- Content editing for Clara (Phase 2): Git-based CMS so she can edit text/hours/prices
+  herself. Sveltia CMS (maintained successor to Decap/Netlify CMS) or Pages CMS.
+  - NOTE: Netlify Identity (old email/password CMS login) is deprecated for new sites.
+    All modern CMS logins now use GitHub OAuth. Clara will use a free GitHub account
+    (invited with limited access) to sign in to a friendly editing UI — never touches code.
+  - Auth via a small Cloudflare Worker OAuth proxy (decap-proxy pattern), or Pages CMS
+    hosted sign-in.
+- Forms (if school/enrollment forms come later): Cloudflare Pages Function/Worker, or a
+  Tally/Formspree free-tier embed.
+- All accounts (domain, hosting, CMS, newsletter, GBP) owned by Clara per constraints.
 
 6) CORE PAGE ARCHITECTURE
 - Home
@@ -87,9 +97,86 @@ PROJECT CONTEXT PACKET
 10) KNOWN DATA (REQUIRES CLIENT CONFIRMATION)
 - Existing phone on legacy site: (405) 933-0962
 - Existing address on legacy site: 626 West Kansas Avenue, Suite C, Chickasha, OK 73018
+- NEW address (client moving September 25, 2026 — approved for website Jul 13, 2026): 611 West Chickasha, Suite B, Chickasha, OK 73018
 - Existing services listed: Massage Therapy, Waxing Services, Ear Candling
 - Existing scheduling notes: By appointment only, self-pay language
 - Final name/hours/services/pricing need explicit final confirmation
+
+*** ADDRESS DISCREPANCY — MUST RESOLVE WITH CLARA ***
+Three different addresses are now in play:
+  a) Live legacy site (time4u.massagetherapy.com) currently shows: 210 South 4th, Suite B, Chickasha, OK 73018
+  b) Prior note in this packet: 626 West Kansas Avenue, Suite C, Chickasha, OK 73018
+  c) NEW confirmed move-in (Sep 25, 2026): 611 West Chickasha, Suite B, Chickasha, OK 73018
+Confirm which is current-today and that (c) is the go-live address. NAP must match GBP.
+
+10b) CONTENT EXTRACTED FROM LEGACY SITE 2026-08-14 (verify/clean before publish)
+- Practitioner: Clara Schoonover, L.M.T. License Number: 84488.
+  Cosmetology license first; 2008 graduated Platt College, Massage Therapy certification.
+  Specialties: Medical Massage, Soft Tissue Mobilization, Orthopedic (cervical pain),
+  Therapeutic Reflexology, Sciatica, Deep Tissue/Sculpting, Fibromyalgia techniques,
+  Pre-Natal/Pregnancy, Carpal Tunnel, Craniosacral, Lymphatic, Cupping, Myofascial
+  Release, certified Breast Massage; also Waxing, Ear Candling, Essential Oils/Aromatherapy.
+- Member, Associated Bodywork & Massage Professionals (ABMP).
+- Hours (legacy): Mon–Thu 9:00am–5:00pm; Fri/Sat/Sun Not Available. By appointment only.
+  Schedule 1–2 weeks in advance. Self-pay only, NO insurance.
+- Policies (legacy): 24-hr cancellation notice; card on file; no-show/15-min-late = full
+  charge; 3+ consecutive missed = no rescheduling; late arrivals shorten session.
+- RATES (legacy — many look typo'd/inconsistent, e.g. "55 Hour", spelling; Clara to confirm):
+  Massage: Full Body 1hr $75; Deep Tissue 1hr $135 / 1.5hr $180; Full Body 1.5hr $115;
+    Half Body 30min $45; Pregnancy 1hr $75; Lymphatic 1hr $85 / 1.5hr $120;
+    Breast 1hr $125; Sinus 45min $40.
+  Add-ons: Hot Stone +$15; Cupping +$15; Essential Oils +$20.
+  Reflexology: Foot 25min $40; Hand 25min $40; Feet+Hand $75.
+  Waxing/Sugaring: Eyebrow $15; Lips $15; Chin & Jawline $25; Sides of Face $20;
+    Full Face $40; Under Arms $20; Half Arms $40; Full Arms $60; Hands $10; Toes $10;
+    Hands & Toes $15; Upper Back $65; Full Back $120; Bikini $30; Brazilian (first) $75 /
+    maintenance $55; Belly (men) $50.
+  Other: Body Sculpting Machine $100/hr; Detox $55; Ear Candling $70 (+$5 extra candle).
+  Student prices: Full Body ~$45–$65; Half Body 25min $25; Sinus 25min $25.
+- Legacy nav had: Home, About, Services & Rates, Benefits, Merchandise (gift packages/
+  certificates), Hours & Scheduling, FAQ, Certifications/Diplomas/Awards, Contact, Blog, Videos.
+- FAQ page = generic ABMP boilerplate (draping, what to expect, benefits, contraindications).
+- Certifications page = photos of paper certs only (no text); need re-photograph or list.
+
+10c) CLIENT DECISIONS 2026-08-14 (CONFIRMED BY CLARA)
+- Address CONFIRMED: 611 West Chickasha, Suite B, Chickasha, OK 73018 (go-live address).
+- NO PRICES on the site (client does not want pricing displayed anywhere).
+- Hours STAY THE SAME after move: Mon–Thu 9:00am–5:00pm; by appointment only.
+- School/Training side = "Coming soon" placeholder for now (no program details yet).
+- Photos: use free stock photography for now, replace with real photos later.
+
+BUILD STATUS 2026-08-14 — REAL MULTI-PAGE SITE BUILT (site/):
+- Next.js 16 App Router, static export, builds clean (10 static routes).
+- Shared components: components/SiteHeader (sticky nav + mobile <details> menu),
+  SiteFooter (NAP + hours + footer nav + newsletter form), Logo (SVG).
+- Fonts: Cormorant Garamond (headings) + Manrope (body) via next/font.
+- Pages: / (home), /services (grouped lists, NO prices), /about (bio + specialties),
+  /credentials (license #84488, Platt 2008, ABMP), /faq (8 Q&As + booking/cancellation
+  policies), /school (coming soon), /contact (NAP, hours, policies). 4 real Google reviews
+  featured on home.
+- PENDING before go-live: real/stock photos (design currently uses gradient panels, no
+  photos yet), newsletter provider embed (Brevo/Mailchimp; footer form action="#" is a
+  placeholder), domain + business email, confirm Tyson/staffing wording, deploy to
+  Cloudflare Pages.
+
+10d) STILL NEEDED FROM CLARA (cannot be scraped)
+- Business email for the domain (e.g. clara@newdomain).
+- Chosen domain name.
+- Any Google reviews / testimonials to feature.
+- Real photos later (headshot, treatment room, exterior/interior, logo file).
+
+10e) REAL REVIEWS FOUND 2026-08-14 (public Google reviews; ~4.7–4.8★, featured on site)
+- Source: Google Business Profile (surfaced via chamberofcommerce.com, wanderboat.ai,
+  bestprosintown.com listings). Official FB: facebook.com/Time4uMassage.
+- Featured on POC Reviews section:
+  * Michael (5★): first-time walk-in, 30-min foot massage/reflexology, "walking on clouds."
+  * Lonetta Avants (5★): "Tyson is an excellent masseuse. My deep tissue massage was amazing. Helped my osteoarthritis."
+  * Kathy Singleton (5★): "Great work and amazing job and people. Peaceful atmosphere."
+  * William Callahan (4★): "Get in, get out. Great people."
+- NOTE: several reviews name "Tyson" (a masseuse/staff), not Clara — confirm current
+  staffing before publish. Clara should approve featuring these + ideally we wire a live
+  Google reviews widget once GBP is claimed so it stays current.
+- BBB: rated B- (1 unanswered complaint), NOT accredited — do not feature BBB.
 
 11) RISKS + MITIGATIONS
 - Scope creep from piecemeal feedback

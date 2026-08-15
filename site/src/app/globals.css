@@ -357,6 +357,10 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .cards-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .grid-2 {
     grid-template-columns: 1fr 1fr;
   }
@@ -364,4 +368,215 @@ h1 {
   .footer-grid {
     grid-template-columns: 1.2fr 1fr;
   }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* ---------- Real site additions ---------- */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans), "Manrope", "Segoe UI", sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1,
+.brand-main,
+.hero-aside h2,
+.section-head h2,
+.page-hero h1,
+.cta-band h2 {
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-hero {
+  padding: 1.6rem 0 0.4rem;
+}
+
+.page-hero h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+  line-height: 1.04;
+}
+
+.page-hero p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.cards-2 {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.prose p {
+  margin: 0 0 0.9rem;
+}
+
+.section-cta {
+  margin-top: 0.9rem;
+}
+
+.note-card,
+.credentials-note,
+.badge-row-wrap {
+  margin-top: 0.8rem;
+}
+
+.badge-row-wrap {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(150deg, rgba(19, 60, 106, 0.96), rgba(37, 112, 177, 0.9));
+  color: #f2f7ff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+}
+
+.cta-band h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.cta-band p {
+  margin: 0.35rem 0 0;
+  color: #dce8ff;
+  max-width: 52ch;
+}
+
+.faq-list {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 0.35rem 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.6rem 0;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item p {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-top: 0.8rem;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  margin-top: 1rem;
+}
+
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 0.92rem;
+  border-radius: 999px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.12rem;
+  min-width: 190px;
+  z-index: 30;
+}
+
+.mobile-menu-panel a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+}
+
+.mobile-menu-panel a:hover {
+  background: #eef4ff;
+  color: var(--blue);
 }
