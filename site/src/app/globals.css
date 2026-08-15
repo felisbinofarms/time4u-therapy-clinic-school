@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #3f5647;
-  --blue: #6d8a76;
-  --mist: #e9e0d2;
-  --sand: #c8a97e;
-  --gold: #c2a56b;
-  --ink: #33362f;
-  --muted: #6f6a5f;
-  --bg: #f7f2ea;
-  --surface: #fffdf9;
-  --line: #e6ddcf;
+  --navy: #133c6a;
+  --blue: #2570b1;
+  --mist: #dee3ee;
+  --sand: #c9ab85;
+  --gold: #ddb673;
+  --ink: #1f2940;
+  --muted: #4f5c75;
+  --bg: #f3f6fc;
+  --surface: #ffffff;
+  --line: #d6dfec;
   --radius-lg: 24px;
   --radius-md: 14px;
   --shadow: 0 16px 40px rgba(19, 60, 106, 0.12);
@@ -28,9 +28,9 @@ body {
   padding: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 0% 6%, rgba(109, 138, 118, 0.12), transparent 30%),
-    radial-gradient(circle at 100% 0%, rgba(200, 169, 126, 0.2), transparent 26%),
-    linear-gradient(180deg, #fbf7f0 0%, var(--bg) 100%);
+    radial-gradient(circle at 0% 6%, rgba(37, 112, 177, 0.1), transparent 28%),
+    radial-gradient(circle at 100% 0%, rgba(221, 182, 115, 0.22), transparent 25%),
+    linear-gradient(180deg, #f8faff 0%, var(--bg) 100%);
   line-height: 1.6;
   font-family: "Manrope", "Segoe UI", sans-serif;
 }
@@ -616,46 +616,14 @@ h1,
   background: var(--gold);
 }
 
-/* ---------- Spa palette warm overrides ---------- */
+/* ---------- Brand accents ---------- */
 
 .logo {
   color: var(--navy);
 }
 
-.site-header {
-  background: rgba(247, 242, 234, 0.9);
-}
-
-.hero-shell {
-  background: linear-gradient(150deg, #fffdf9, #eef1e8 58%, #f6ece0 120%);
-}
-
-.hero-aside {
-  background: linear-gradient(180deg, rgba(63, 86, 71, 0.95), rgba(109, 138, 118, 0.9));
-}
-
-.eyebrow {
-  color: var(--navy);
-  background: #eef1e8;
-  border-color: #d9cfbc;
-}
-
-.badge {
-  border-color: #ddd0bb;
-  background: #f0efe6;
-  color: #4a5f50;
-}
-
-.quote {
-  background: #fbf5ea;
-}
-
-.mobile-menu-panel a:hover {
-  background: #eef1e8;
-}
-
 .service-card h3 {
-  border-bottom-color: var(--sand);
+  border-bottom-color: var(--mist);
 }
 
 /* ---------- Imagery ---------- */
