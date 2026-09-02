@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "School of Massage Therapy",
   description:
-    "Time 4U Therapy Massage Clinic and School — massage therapy training and classes coming soon in Chickasha, Oklahoma. Join our newsletter to be first to know when enrollment opens.",
+    "Time 4U Therapy Massage Clinic and School — massage therapy training and classes coming soon in Chickasha, Oklahoma, with current student massage pricing available online.",
 };
 
 export default function SchoolPage() {
@@ -48,6 +48,21 @@ export default function SchoolPage() {
                 Call to ask a question
               </a>
             </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="wrap">
+          <article className="card">
+            <h3>Student Massages</h3>
+            <p>Current student massage pricing:</p>
+            <ul className="steps">
+              <li>$25.00 half hour massage</li>
+              <li>$45.00 hour massage</li>
+              <li>$65.00 1&frac12; hour massage</li>
+              <li>$30.00 sinus massage</li>
+            </ul>
           </article>
         </div>
       </section>
