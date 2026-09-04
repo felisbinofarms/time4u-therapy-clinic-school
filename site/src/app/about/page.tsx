@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { basePath } from "../lib/basePath";
+import { business, phoneDigits } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "About Clara",
@@ -73,7 +74,7 @@ export default function AboutPage() {
             <h3>At a glance</h3>
             <ul className="steps">
               <li>Licensed Massage Therapist (L.M.T.)</li>
-              <li>License #84488 — Oklahoma</li>
+              <li>License #{business.licenseNumber} — Oklahoma</li>
               <li>Certified in Massage Therapy, Platt College (2008)</li>
               <li>Member, Associated Bodywork &amp; Massage Professionals</li>
               <li>Serving Chickasha since 2008</li>
@@ -110,8 +111,8 @@ export default function AboutPage() {
               <h2>Ready to feel better?</h2>
               <p>Call or text to schedule your session with Clara.</p>
             </div>
-            <a className="btn btn-primary" href="tel:4059330962">
-              Call (405) 933-0962
+            <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
+              Call {business.phone}
             </a>
           </article>
         </div>

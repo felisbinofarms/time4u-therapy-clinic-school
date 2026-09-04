@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { business, phoneDigits, fullAddress } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "Contact & Book",
@@ -26,18 +27,19 @@ export default function ContactPage() {
             <h3>Book an appointment</h3>
             <ul className="steps">
               <li>
-                Call or text: <a href="tel:4059330962">(405) 933-0962</a>
+                Call or text:{" "}
+                <a href={`tel:${phoneDigits}`}>{business.phone}</a>
               </li>
-              <li>611 West Chickasha, Suite B, Chickasha, OK 73018</li>
-              <li>Hours: Mon&ndash;Thu, 9am&ndash;5pm</li>
-              <li>By appointment only &middot; Self-pay (no insurance)</li>
+              <li>{fullAddress}</li>
+              <li>Hours: {business.hours}</li>
+              <li>{business.bookingNote} &middot; Self-pay (no insurance)</li>
             </ul>
-            <p className="tiny">Moving to our new location September 25!</p>
+            <p className="tiny">{business.movingNotice}</p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="tel:4059330962">
+              <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
                 Call Now
               </a>
-              <a className="btn btn-outline" href="sms:4059330962">
+              <a className="btn btn-outline" href={`sms:${phoneDigits}`}>
                 Text Now
               </a>
             </div>

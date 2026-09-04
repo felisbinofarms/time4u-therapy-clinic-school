@@ -1,0 +1,36 @@
+{
+  "name": "Time 4U Therapy Massage Clinic and School",
+  "shortName": "Time 4 U Therapy Massage",
+  "phone": "(405) 933-0962",
+  "addressLine": "611 West Chickasha, Suite B",
+  "city": "Chickasha",
+  "state": "OK",
+  "zip": "73018",
+  "hours": "Mon–Thu, 9am–5pm",
+  "bookingNote": "By appointment only",
+  "movingNotice": "Moving to our new location September 25!",
+  "licenseNumber": "84488",
+  "reviewsRating": "4.8 out of 5",
+  "reviews": [
+    {
+      "quote": "I was a first-time client and just happened to be close by and walked in with no appointment. They had no problem squeezing me in for a 30-minute foot massage, took their time, and really cared about my problem areas, explaining what they were doing as we went along. I left feeling like I was walking on clouds. Definitely will be back soon!",
+      "author": "Michael",
+      "source": "Google review"
+    },
+    {
+      "quote": "Tyson is an excellent masseuse. My deep tissue massage was amazing. Helped my osteoarthritis.",
+      "author": "Lonetta Avants",
+      "source": "Google review"
+    },
+    {
+      "quote": "Great work and amazing job and people. Peaceful atmosphere.",
+      "author": "Kathy Singleton",
+      "source": "Google review"
+    },
+    {
+      "quote": "Get in, get out. Great people.",
+      "author": "William Callahan",
+      "source": "Google review"
+    }
+  ]
+}

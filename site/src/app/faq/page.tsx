@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { business } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "FAQ & Policies",
@@ -38,7 +39,7 @@ const faqs = [
   },
   {
     q: "How do I book?",
-    a: "Call or text (405) 933-0962. Appointments are by appointment only and are typically scheduled 1–2 weeks in advance.",
+    a: `Call or text ${business.phone}. Appointments are by appointment only and are typically scheduled 1–2 weeks in advance.`,
   },
 ];
 

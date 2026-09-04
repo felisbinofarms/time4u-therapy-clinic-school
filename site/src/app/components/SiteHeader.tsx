@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import { business, phoneDigits } from "../lib/business";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -14,8 +15,10 @@ export default function SiteHeader() {
     <>
       <div className="topbar">
         <div className="wrap topbar-inner">
-          <span>By appointment only &middot; Chickasha, Oklahoma</span>
-          <span>Call or text: (405) 933-0962</span>
+          <span>
+            {business.bookingNote} &middot; {business.city}, Oklahoma
+          </span>
+          <span>Call or text: {business.phone}</span>
         </div>
       </div>
 
@@ -38,7 +41,7 @@ export default function SiteHeader() {
           </nav>
 
           <div className="header-actions">
-            <a className="btn btn-outline" href="tel:4059330962">
+            <a className="btn btn-outline" href={`tel:${phoneDigits}`}>
               Call
             </a>
             <Link className="btn btn-primary" href="/contact">

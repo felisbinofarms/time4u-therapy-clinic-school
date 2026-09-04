@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { business, fullAddress } from "../lib/business";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -16,14 +17,14 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="wrap footer-grid">
         <div>
-          <h3>Time 4U Therapy Massage Clinic and School</h3>
+          <h3>{business.name}</h3>
           <p className="tiny">
-            611 West Chickasha, Suite B &middot; Chickasha, OK 73018
+            {fullAddress}
             <br />
-            (405) 933-0962 &middot; Mon&ndash;Thu, 9am&ndash;5pm &middot; By
-            appointment only
+            {business.phone} &middot; {business.hours} &middot;{" "}
+            {business.bookingNote}
           </p>
-          <p className="tiny">Moving to our new location September 25!</p>
+          <p className="tiny">{business.movingNotice}</p>
           <nav className="footer-nav" aria-label="Footer navigation">
             {footerLinks.map((link) => (
               <Link key={link.href} href={link.href}>
@@ -53,8 +54,8 @@ export default function SiteFooter() {
       </div>
       <div className="wrap">
         <p className="tiny footer-legal">
-          &copy; {year} Time 4U Therapy Massage Clinic and School &middot; Clara
-          Schoonover, L.M.T. &middot; Licensed in Oklahoma
+          &copy; {year} {business.name} &middot; Clara Schoonover, L.M.T.
+          &middot; Licensed in Oklahoma
         </p>
       </div>
     </footer>

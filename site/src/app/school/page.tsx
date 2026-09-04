@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { phoneDigits } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "School of Massage Therapy",
@@ -44,7 +45,7 @@ export default function SchoolPage() {
               among the first to hear about start dates and how to apply.
             </p>
             <p className="section-cta">
-              <a className="btn btn-primary" href="tel:4059330962">
+              <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
                 Call to ask a question
               </a>
             </p>

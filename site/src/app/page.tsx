@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { basePath } from "./lib/basePath";
+import { business, phoneDigits, fullAddress } from "./lib/business";
 
 export default function Home() {
   return (
@@ -16,10 +17,10 @@ export default function Home() {
               goals.
             </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="tel:4059330962">
+              <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
                 Call to Book
               </a>
-              <a className="btn btn-outline" href="sms:4059330962">
+              <a className="btn btn-outline" href={`sms:${phoneDigits}`}>
                 Text to Book
               </a>
               <Link className="btn btn-outline" href="/services">
@@ -27,9 +28,9 @@ export default function Home() {
               </Link>
             </div>
               <div className="hero-facts">
-                <span>611 West Chickasha, Suite B</span>
-                <span>(405) 933-0962</span>
-                <span>Mon&ndash;Thu, 9am&ndash;5pm</span>
+                <span>{business.addressLine}</span>
+                <span>{business.phone}</span>
+                <span>{business.hours}</span>
               </div>
             </div>
             <div className="hero-media">
@@ -163,39 +164,22 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head">
             <h2>What clients are saying</h2>
-            <p>Rated 4.8 out of 5 on Google. Here&apos;s what local clients share.</p>
+            <p>
+              Rated {business.reviewsRating} on Google. Here&apos;s what local
+              clients share.
+            </p>
           </div>
           <div className="cards">
-            <article className="card">
-              <blockquote className="quote">
-                I was a first-time client and just happened to be close by and
-                walked in with no appointment. They had no problem squeezing me
-                in for a 30-minute foot massage, took their time, and really
-                cared about my problem areas, explaining what they were doing as
-                we went along. I left feeling like I was walking on clouds.
-                Definitely will be back soon!
-                <strong>Michael &middot; Google review</strong>
-              </blockquote>
-            </article>
-            <article className="card">
-              <blockquote className="quote">
-                Tyson is an excellent masseuse. My deep tissue massage was
-                amazing. Helped my osteoarthritis.
-                <strong>Lonetta Avants &middot; Google review</strong>
-              </blockquote>
-            </article>
-            <article className="card">
-              <blockquote className="quote">
-                Great work and amazing job and people. Peaceful atmosphere.
-                <strong>Kathy Singleton &middot; Google review</strong>
-              </blockquote>
-            </article>
-            <article className="card">
-              <blockquote className="quote">
-                Get in, get out. Great people.
-                <strong>William Callahan &middot; Google review</strong>
-              </blockquote>
-            </article>
+            {business.reviews.map((review) => (
+              <article className="card" key={review.author}>
+                <blockquote className="quote">
+                  {review.quote}
+                  <strong>
+                    {review.author} &middot; {review.source}
+                  </strong>
+                </blockquote>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -223,16 +207,18 @@ export default function Home() {
             <h3>Ready to book?</h3>
             <p>Call or text — appointments are scheduled 1&ndash;2 weeks ahead.</p>
             <ul className="steps">
-              <li>Call or text: (405) 933-0962</li>
-              <li>611 West Chickasha, Suite B, Chickasha, OK 73018</li>
-              <li>Mon&ndash;Thu, 9am&ndash;5pm &middot; By appointment only</li>
+              <li>Call or text: {business.phone}</li>
+              <li>{fullAddress}</li>
+              <li>
+                {business.hours} &middot; {business.bookingNote}
+              </li>
             </ul>
-            <p className="tiny">Moving to our new location September 25!</p>
+            <p className="tiny">{business.movingNotice}</p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="tel:4059330962">
+              <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
                 Call Now
               </a>
-              <a className="btn btn-outline" href="sms:4059330962">
+              <a className="btn btn-outline" href={`sms:${phoneDigits}`}>
                 Text Now
               </a>
             </div>
@@ -244,7 +230,7 @@ export default function Home() {
               therapeutic massage and bodywork since 2008.
             </p>
             <div className="badge-row">
-              <span className="badge">License #84488</span>
+              <span className="badge">License #{business.licenseNumber}</span>
               <span className="badge">ABMP Member</span>
               <span className="badge">By Appointment</span>
             </div>

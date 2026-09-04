@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { business } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "Credentials",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 const credentials = [
   {
     title: "License",
-    body: "Licensed Massage Therapist (L.M.T.), Oklahoma license #84488, issued by the Oklahoma Board of Cosmetology and Barbering.",
+    body: `Licensed Massage Therapist (L.M.T.), Oklahoma license #${business.licenseNumber}, issued by the Oklahoma Board of Cosmetology and Barbering.`,
   },
   {
     title: "Education",

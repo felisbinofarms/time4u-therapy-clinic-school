@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { business, phoneDigits } from "../lib/business";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -82,7 +83,7 @@ export default function ServicesPage() {
             <p>
               Pricing depends on your session, condition, and the time needed, so
               we&apos;ll go over it when you book. Call or text{" "}
-              <a href="tel:4059330962">(405) 933-0962</a> and Clara will help you
+              <a href={`tel:${phoneDigits}`}>{business.phone}</a> and Clara will help you
               choose the right service.
             </p>
             <p className="tiny">
@@ -90,10 +91,10 @@ export default function ServicesPage() {
               are scheduled 1&ndash;2 weeks in advance.
             </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="tel:4059330962">
+              <a className="btn btn-primary" href={`tel:${phoneDigits}`}>
                 Call to Book
               </a>
-              <a className="btn btn-outline" href="sms:4059330962">
+              <a className="btn btn-outline" href={`sms:${phoneDigits}`}>
                 Text to Book
               </a>
             </div>
